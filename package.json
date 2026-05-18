@@ -1,0 +1,49 @@
+{
+  "name": "@alternative-design-and-media/usemotion-api-connector",
+  "version": "0.1.0",
+  "description": "Type-safe UseMotion REST API client for Node.js and edge runtimes.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run typecheck && npm run build"
+  },
+  "keywords": [
+    "usemotion",
+    "motion",
+    "api",
+    "client",
+    "typescript"
+  ],
+  "author": "Alternative Design and Media",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alternative-Design-And-Media/usemotion-api-connector.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Alternative-Design-And-Media/usemotion-api-connector/issues"
+  },
+  "homepage": "https://github.com/Alternative-Design-And-Media/usemotion-api-connector#readme",
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.1"
+  }
+}
